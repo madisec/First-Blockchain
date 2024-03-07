@@ -1,5 +1,7 @@
+const crypto = require('crypto');
+
 const hashFunc = (input) => {
-    return '*' + input + '*';
+    return '*' + crypto.createHash('md5').update(input).digest("hex"); + '*';
 }
 
 class Block {
